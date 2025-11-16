@@ -5,32 +5,32 @@ This project is an e-commerce assistant built using the `google-adk` (Agent Deve
 
 ## Features
 
-### Multi-agent system
+### 1. Multi-agent system
 This project uses a multi-agent system that includes a combination of a parent agent orchestrator that uses sub-agents to answer the user query.
 
 **How is this feature incorporated in this project?**
 - **Agent powered by an LLM**: The project uses the `google-adk`'s `LlmAgent` class to create agents powered by Gemini models.
 - **Sequential agents**: The `ecommerce_agent` in `agents/orchestrator.py` is a parent agent that delegates tasks to a list of sub-agents defined in `agents/specialists.py`. The orchestrator sequentially goes through the sub-agents to find the right agent to answer the user query.
 
-### Tools
+### 2. Tools
 This project uses custom tools to get information from a simulated database.
 
 **How is this feature incorporated in this project?**
 - **Custom tools**: The project defines custom tools in `tools/db_simulators.py` to simulate database lookups for sales reports and inventory status. These tools are then used by the specialist agents.
 
-### Sessions & Memory
+### 3. Sessions & Memory
 This project uses in-memory session and state management to manage the user's conversation history.
 
 **How is this feature incorporated in this project?**
 - **Sessions & state management**: The `main_runner.py` file demonstrates how to use `run_session` to manage conversation history. It uses different session IDs for different user roles (customer vs. admin) to maintain separate conversation histories.
 
-### Observability: Logging, Tracing, Metrics
+### 4. Observability: Logging, Tracing, Metrics
 This project has a basic setup for observability.
 
 **How is this feature incorporated in this project?**
 - **Logging**: The `utils/observability_setup.py` file sets up basic logging for the application.
 
-### Agent evaluation
+### 5. Agent evaluation
 This project has a basic setup for agent evaluation.
 
 **How is this feature incorporated in this project?**
@@ -43,7 +43,8 @@ This project has a basic setup for agent evaluation.
 
 ### Installation
 1. Clone the repository.
-2. Install the dependencies from `requirements.txt`:
+2. Create virtual environment
+3. Install the dependencies from `requirements.txt`:
 ```bash
 pip install -r requirements.txt
 ```
