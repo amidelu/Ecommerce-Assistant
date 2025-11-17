@@ -30,7 +30,7 @@ runner = Runner(
     agent=ecommerce_agent,
     app_name=APP_NAME,
     session_service=session_service,
-    # plugins=[LoggingPlugin()],
+    plugins=[LoggingPlugin()],
 )
 
 
