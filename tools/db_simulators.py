@@ -12,7 +12,7 @@ def get_sales_report(start_date: str, end_date: str) -> str:
         A natural language summary of sales, or an error if the dates are invalid.
     """
     # Simulate DB lookup (Production code would use a real API/DB connector)
-    if start_date == "2025-11-01" and end_date == "2025-11-31":
+    if start_date == "2025-11-01" and end_date == "2025-11-30":
         return "Q1 Sales Report: Total revenue was $150,000, with top product 'Astro Sneakers' accounting for 40%."
     return "Error: Sales data for the specified range is unavailable."
 

@@ -33,21 +33,16 @@ def enforce_input_guardrail_callback(callback_context: CallbackContext):
     Executes before the LLM call. Inspects the user's prompt (Input Filtering)
     and blocks or modifies the request if policy is violated.
     """
+
     try:
-        if callback_context.user_content.parts:
-            user_query = callback_context.user_content.parts[0].text
-        else:
-            return None
+        user_query = callback_context.user_content.parts[0].text
     except AttributeError:
         return None
 
     if check_for_malicious_content(user_query):
         # If malicious content is detected:
 
-        # 1. Log the attempted violation for observability
-        print(f"SECURITY ALERT: Input blocked due to policy violation: {user_query}")
-
-        # 2. Enforce the hard-stop policy by overriding the prompt to the model
+        # Enforce the hard-stop policy by overriding the prompt to the model
         # This prevents the malicious query from reaching the core reasoning engine.
         response_content = Content(
             parts=[

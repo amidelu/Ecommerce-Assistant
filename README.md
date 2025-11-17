@@ -1,5 +1,9 @@
 # E-commerce Agentic Search
 
+<center>
+<img src="agent_diagram.jpg" width="400" />
+</center>
+
 ## Project Overview
 This project is an e-commerce assistant built using the `google-adk` (Agent Development Kit) and Google's Gemini models. Its primary purpose is to handle customer and administrative queries for an e-commerce platform. The system employs a sophisticated multi-agent architecture consisting of a central orchestrator (`ecommerce_agent`) that delegates tasks to specialized agents for customer service, sales reporting, inventory monitoring, and price research. Agents are equipped with tools, including simulated database functions and Google Search.
 

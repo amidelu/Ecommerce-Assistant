@@ -56,12 +56,14 @@ session_id_customer = "session_customer_001"
 async def main():
     # Sales Report (Delegated to SalesReporterAgent, uses custom tool)
     await run_query(
-        "I need the Q1 sales report for the year 2025. Start date 2025-11-01 and End date 2025-11-31",
+        "I need the Q1 sales report for the year 2025. Start date 2025-11-01 and End date 2025-11-30",
         session_id_admin,
     )
 
     # Inventory Query and Proactive Action (Delegated to InventoryMonitorAgent, uses two tools)
-    await run_query("What is the stock status for product ASTRO-001?", session_id_admin)
+    await run_query(
+        "What is the stock status for product id ASTRO-001?", session_id_admin
+    )
 
     # Customer Service Query (Relies on inherent LLM ability, plus Sessions/Memory later)
     await run_query(
